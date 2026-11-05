@@ -1,0 +1,24 @@
+version: 2
+sources:
+  - name: raw_data
+    schema: SF_SCHEMA
+    database: SNOWFLAKE_DBT_DATA
+    tables:
+      - name: cust #logical naming
+        identifier: CUSTOMER #actual table name
+      - name: sales
+        identifier: sales_transitions
+      - name: ord
+        identifier: orders
+      - name: supply_chain
+        identifier: supply_chain_orders
+  - name: prod_data 
+    schema: PROD_SCH
+    database: SNOWFLAKE_DBT_DATA
+    tables:
+      - name: prod ##logical naming
+        identifier: PRODUCT #actual table name
+      
+      - name: del  #logical naming
+        identifier: DELIVERY_STATUS_FACT #actual table name
+      
